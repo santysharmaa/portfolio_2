@@ -244,38 +244,54 @@ My focus lies in developing end-to-end machine learning solutions, from data wra
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <ul class="contact-details">
-      <li><strong>Email:</strong> <a href="mailto:santy.sharma2572@gmail.com">santy.sharma2572@gmail.com</a></li>
-      <li><strong>Phone:</strong> <a href="tel:+919877956448">+91 9877956448</a></li>
-      <li>
-        <strong>Links:</strong>
-        <a href="https://www.linkedin.com/in/santyy/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/santysharmaa" target="_blank">GitHub</a> |
-        <a href="https://leetcode.com/" target="_blank">Leetcode</a>
-      </li>
-    </ul>
-    <form class="contact-form" action="https://formsubmit.co/santy.sharma2572@gmail.com" method="POST" autocomplete="off">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required placeholder="Your Name">
+  <h2>Contact Me</h2>
+  <ul class="contact-details">
+    <li><strong>Email:</strong> <a href="mailto:santy.sharma2572@gmail.com">santy.sharma2572@gmail.com</a></li>
+    <li><strong>Phone:</strong> <a href="tel:+919877956448">+91 9877956448</a></li>
+    <li>
+      <strong>Links:</strong>
+      <a href="https://www.linkedin.com/in/santyy/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/santysharmaa" target="_blank">GitHub</a> |
+      <a href="https://leetcode.com/" target="_blank">Leetcode</a>
+    </li>
+  </ul>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required placeholder="Your Email">
+  <!-- ✅ Netlify-integrated form -->
+  <form name="contact" method="POST" data-netlify="true" onsubmit="showPopup(); return false;" autocomplete="off">
+    <input type="hidden" name="form-name" value="contact" />
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name" />
 
-  <!-- Optional settings -->
-  <input type="hidden" name="_captcha" value="false">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Your Email" />
 
-  <button type="submit">Send Message</button>
-</form>
-<div id="popupMessage" style="display: none; text-align: center; padding: 1.5rem; background: #222; color: lightgreen; border: 1px solid #b74b4b; border-radius: 1rem; margin-top: 1rem; font-size: 1.4rem;">
-  ✅ Thank you for contacting! Message sent successfully.
-</div>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
 
+    <button type="submit">Send Message</button>
+  </form>
 
-  </section>
+  <!-- ✅ Success popup -->
+  <div id="popupMessage" style="display: none; text-align: center; padding: 1.5rem; background: #222; color: lightgreen; border: 1px solid #b74b4b; border-radius: 1rem; margin-top: 1rem; font-size: 1.4rem;">
+    ✅ Thank you for contacting! Message sent successfully.
+  </div>
+
+  <!-- ✅ JavaScript for popup -->
+  <script>
+    function showPopup() {
+      document.getElementById("popupMessage").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("popupMessage").style.display = "none";
+      }, 5000);
+      // Submit the form manually after showing popup
+      setTimeout(() => {
+        document.forms["contact"].submit();
+      }, 100);
+    }
+  </script>
+</section>
+
 
 <script src="script.js"></script>
 </body>
