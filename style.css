@@ -239,46 +239,73 @@ span {
 }
 
 /* About Section */
+/* About Section */
+.about-section {
+  padding: 8rem 9% 6rem;
+  background-color: #0e0e0e;
+  border-top: 1px solid #b74b4b33;
+  border-bottom: 1px solid #b74b4b33;
+}
+
 .about-section h2 {
-    font-size: 4rem;
-    color: #b74b4b;
-    margin-bottom: 2rem;
-    font-weight: 700;
+  font-size: 4.5rem;
+  color: #b74b4b;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1px;
 }
+
 .about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 4rem;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  gap: 6rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .about-text {
-    max-width: 600px;
+  max-width: 700px;
+  font-size: 1.9rem;
+  line-height: 1.8;
+  color: #ddd;
+  background: #161616;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(183, 75, 75, 0.1);
+  transition: 0.3s ease;
 }
+
 .about-text h3 {
-    font-size: 3rem;
-    color: #b74b4b;
-    margin-bottom: 1rem;
-    font-weight: 600;
+  font-size: 3.2rem;
+  color: #b74b4b;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
+
 .about-details {
-    list-style: none;
-    margin-top: 2rem;
-    font-size: 1.7rem;
+  list-style: none;
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
 }
+
 .about-details li {
-    margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
+
 .about-details a {
-    color: #b74b4b;
-    text-decoration: underline;
-    transition: color 0.3s;
+  color: #b74b4b;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
+
 .about-details a:hover {
-    color: #fff;
-    background: #b74b4b;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
+  color: white;
+  border-bottom: 2px solid #b74b4b;
 }
+
 
 
 /* Education Section */
@@ -370,6 +397,26 @@ span {
     color: #ccc;
 }
 
+.experience-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #b74b4b;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.experience-btn:hover {
+  background-color: #fff;
+  color: #b74b4b;
+  transform: scale(1.05);
+}
+
+
 /* Projects Section */
 .projects-section h2 {
     font-size: 4rem;
@@ -437,6 +484,46 @@ span {
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
 }
+
+.project-btn {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: 1.1rem 2.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: black;
+  background: linear-gradient(135deg, #ff0000, #000000);
+  border-radius: 3rem;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff0000, #000000);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.project-btn:hover::before {
+  left: 0;
+}
+
+.project-btn:hover {
+  color: #161616;
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.5);
+}
+
 
 /* Skills Section */
 .skills-section h2 {
@@ -749,4 +836,7 @@ body {
 .scrolled .profile-pic {
   width: 50px;
   height: 50px;
+}
+section {
+  scroll-margin-top: 90px; /* Already included, keep it */
 }
