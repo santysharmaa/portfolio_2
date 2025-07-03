@@ -840,3 +840,17 @@ body {
 section {
   scroll-margin-top: 90px; /* Already included, keep it */
 }
+
+
+
+#popupMessage {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+}
+
+#popupMessage.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}

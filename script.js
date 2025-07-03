@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Toggle mobile menu
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  menuToggle.addEventListener('click', function () {
+  // Toggle mobile menu
+  menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
     menuToggle.querySelector('i').classList.toggle('fa-times');
   });
 
+  // Collapse mobile nav on link click
   navLinks.forEach(link => {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', () => {
       nav.classList.remove('active');
       menuToggle.querySelector('i').classList.remove('fa-times');
     });
   });
 
-  // Smooth scroll on click
+  // Smooth scroll behavior
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
+      const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         window.scrollTo({
           top: target.offsetTop - 80,
@@ -31,33 +31,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Intersection Observer for active nav item
+  // Highlight active nav link based on section in view
   const sections = document.querySelectorAll('section[id]');
-  const options = {
-    threshold: 0.5,
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
       const navItem = document.querySelector(`nav a[href="#${id}"]`);
       if (entry.isIntersecting) {
         navLinks.forEach(link => link.classList.remove('active'));
-        navItem.classList.add('active');
+        if (navItem) navItem.classList.add('active');
       }
     });
-  }, options);
+  }, { threshold: 0.5 });
 
   sections.forEach(section => observer.observe(section));
 
-  // Contact form success message
-  const form = document.querySelector(".contact-form");
-  const popup = document.getElementById("popupMessage");
+  // Show popup on successful contact form submit
+  const form = document.querySelector('.contact-form');
+  const popup = document.getElementById('popupMessage');
 
-  form.addEventListener("submit", function () {
-    popup.style.display = "block";
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 4000);
-  });
+  if (form && popup) {
+    form.addEventListener('submit', function () {
+      popup.classList.add('show');
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 5000);
+    });
+  }
 });
