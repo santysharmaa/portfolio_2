@@ -56,3 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+<script>
+  const form = document.querySelector(".contact-form");
+  const popup = document.getElementById("popupMessage");
+
+  form.addEventListener("submit", function () {
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 4000); // hides after 4 seconds
+  });
+</script>
