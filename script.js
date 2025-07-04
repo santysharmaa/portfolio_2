@@ -53,9 +53,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // for the form
 
-const form = document.getElementById('contactForm');
-  const sendingMsg = document.getElementById('sendingMsg');
-
-  form.addEventListener('submit', function () {
-    sendingMsg.style.display = 'block';
-  });
