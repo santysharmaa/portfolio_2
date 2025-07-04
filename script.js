@@ -47,15 +47,5 @@ document.addEventListener('DOMContentLoaded', function () {
   sections.forEach(section => observer.observe(section));
 
   // Show popup on successful contact form submit
-  const form = document.querySelector('.contact-form');
-  const popup = document.getElementById('popupMessage');
 
-  if (form && popup) {
-    form.addEventListener('submit', function () {
-      popup.classList.add('show');
-      setTimeout(() => {
-        popup.classList.remove('show');
-      }, 5000);
-    });
-  }
 });

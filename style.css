@@ -843,7 +843,7 @@ section {
 
 
 
-#popupMessage {
+/* #popupMessage {
   opacity: 0;
   transform: scale(0.95);
   transition: all 0.4s ease;
@@ -853,4 +853,4 @@ section {
   display: block;
   opacity: 1;
   transform: scale(1);
-}
+} */
