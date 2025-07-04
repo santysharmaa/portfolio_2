@@ -49,3 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // Show popup on successful contact form submit
 
 });
+
+
+// for the form
+
+const form = document.getElementById('contactForm');
+  const sendingMsg = document.getElementById('sendingMsg');
+
+  form.addEventListener('submit', function () {
+    sendingMsg.style.display = 'block';
+  });

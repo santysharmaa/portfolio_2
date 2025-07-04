@@ -841,6 +841,25 @@ section {
   scroll-margin-top: 90px; /* Already included, keep it */
 }
 
+/* for the form */
+ 
+.sending-message {
+  display: none;
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-align: center;
+  animation: pulse 1s infinite;
+  font-weight: bold;
+  text-shadow: 0 0 10px red, 0 0 20px red;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
 
 
 /* #popupMessage {
